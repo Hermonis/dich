@@ -3,6 +3,7 @@ import { HttpService} from '../services/http.service';
 import { User } from '../datamodel/user';    
 
 import { CardComponent } from "../card/card";
+import { ITS_JUST_ANGULAR } from '@angular/core/src/r3_symbols';
 
 @Component({
     selector: 'admin-companent',
@@ -15,22 +16,26 @@ export class AdminComponent implements OnInit{
     //user: User = new User();
     users: User[]=[];
     tableMode: boolean = true;
-    
+
     user : User | undefined;
 
     constructor(private httpService: HttpService){}
 
+    get(user:User)
+    {    
+        sessionStorage.setItem('userName.com', (user.name));
+        sessionStorage.setItem('userInfo.com', (user.info));
+    }
+
     ngOnInit(){
         console.log(window.location.href);
         this.httpService.getData(this.httpService.urlUsers).subscribe((data:any) => this.users = data["userList"]);
-        console.log(this.users);
     }
-    
 
 
     // получаем данные через сервис
     loadProducts() {
-        this.httpService.getData(this.httpService.urlUsers).subscribe((data:any) => this.users = data["userList"])
+        this.httpService.getData(this.httpService.urlUsers).subscribe((data:any) => this.users = data["userList"]);
     }
 
     // сохранение данных

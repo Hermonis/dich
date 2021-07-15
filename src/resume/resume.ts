@@ -1,14 +1,31 @@
-import { Component , Input } from '@angular/core';
-import { HttpService} from '../services/http.service';
-import { AdminComponent } from '../admin/admin';
-import { User } from '../datamodel/user';
+import { Component , Input , OnInit} from '@angular/core';
+import { ActivatedRoute, Route } from '@angular/router';
+
+
      
 @Component({
-    selector: 'card-companent',
+    selector: 'resume-companent',
     templateUrl: './resume.html',
     styleUrls: ['./resume.css']
 })
 
-export class ResumeComponent { 
-    @Input() name: string;
+export class ResumeComponent implements OnInit{
+    userName:string;
+    userInfo:string;
+
+    flVizion:boolean = false;
+    
+
+    constructor(
+        private route: ActivatedRoute
+    ){ }
+
+    ngOnInit(){
+        this.userName = sessionStorage.getItem('userName.com');
+        this.userInfo = sessionStorage.getItem('userInfo.com');
+    }
+    
+    pan(){
+        this.flVizion = !this.flVizion;
+    }
 }

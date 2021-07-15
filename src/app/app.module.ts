@@ -17,7 +17,8 @@ const resumeRoutes: Routes = [
 
 const appRoutes: Routes =[
     {path: '', component: LoginComponent},
-    {path: 'admin', component: AdminComponent}
+    {path: 'admin', component: AdminComponent},
+    {path: 'resume/:resumeId', component: ResumeComponent}
 ]
 
 @NgModule({
