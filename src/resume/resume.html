@@ -21,6 +21,9 @@
             </h1>
             <h2 [hidden] = "flVizion">{{userInfo}}</h2>
             <textarea [hidden] = "!flVizion" [(ngModel)]="userInfo"></textarea>
-            <button [hidden] = "!flVizion" (click) = "pan()">Сохранить</button>
+            <div class="button">
+                <button class='cancellation' [hidden] = "!flVizion" (click) = "cancellation()">Отменить</button>
+                <button class='save' [hidden] = "!flVizion" (click) = "save()">Сохранить</button>
+            </div>
         </div>
     <footer></footer>

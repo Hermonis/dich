@@ -25,6 +25,16 @@ export class ResumeComponent implements OnInit{
         this.userInfo = sessionStorage.getItem('userInfo.com');
     }
     
+    cancellation(){
+        this.userInfo = sessionStorage.getItem('userInfo.com');
+        this.pan();
+    }
+
+    save(){
+        sessionStorage.setItem('userInfo.com', (this.userInfo));
+        this.pan();
+    }
+
     pan(){
         this.flVizion = !this.flVizion;
     }
