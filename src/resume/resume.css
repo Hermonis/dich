@@ -70,10 +70,11 @@ div.resume > textarea{
 }
 
 div.resume > h1 > p{
-    margin: -25px auto 0 97%;
+    margin: -25px auto 0 95%;
 }
 
 div.button{
+    width: 95%;
     display: flex;
     margin: 7px auto 0 2%;
 }
@@ -91,6 +92,6 @@ div.button > button.cancellation{
 }
 
 div.button > button.save{
-    margin: 76px auto 0 50%;
+    margin: 76px auto 0 55%;
     background: green;
 }
